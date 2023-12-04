@@ -3,14 +3,16 @@
     <div class="row align-items-center">
       <!-- 网站名 -->
       <div class="col text-center">
-        欢迎, <strong>{{username}}</strong>!
+        欢迎, <strong>{{ username }}</strong>!
       </div>
       <!-- 导航 -->
       <div class="col">
         <nav class="navbar navbar-expand-lg text-center">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">导航</a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,13 +24,16 @@
                   <a class="nav-link" href="#">关于</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     分类下拉
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                   </ul>
                 </li>
@@ -52,12 +57,15 @@
         <ul class="navbar-nav flex-row flex-warp justify-content-center">
           <li class="nav-item">
             <div v-if="hasLogin" class="dropdown">
-              <img class="rounded-circle" src="头像.jpg" alt="User Avatar" width="40" height="40" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="rounded-circle" src="头像.jpg" alt="User Avatar" width="40" height="40" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
               <ul class="dropdown-menu text-small" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item disabled">欢迎: <strong>{{username}}</strong> !</a></li>
+                <li><a class="dropdown-item disabled">欢迎: <strong>{{ username }}</strong> !</a></li>
                 <li><a class="dropdown-item" href="#">个人资料</a></li>
                 <li><a class="dropdown-item" href="#">设置</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li><router-link to="/" v-on:click.prevent="logout()" class="dropdown-item">登出</router-link></li>
               </ul>
             </div>
@@ -74,41 +82,38 @@
     </div>
 
   </header>
-  
 </template>
 
 <script>
-  import authorization from '@/utils/authorization';
+import authorization from '@/utils/authorization';
 
-  export default {
-      name: 'HomeHeader',
-      components: {},
-      data: function () {
-        return {
-            username: '',
-            hasLogin: false,
-            isSuperuser: true,
-        }
-      },
-      mounted() {
-        authorization().then((data) => [this.hasLogin, this.username] = data);
-      },
-      methods:{
-        logout() {
-                localStorage.clear();
-                window.location.reload(false);
-            },
-            refresh() {
-                this.username = localStorage.getItem('username.myblog');
-            }
-      }
+export default {
+  name: 'HomeHeader',
+  components: {},
+  data: function () {
+    return {
+      username: '',
+      hasLogin: false,
+      isSuperuser: true,
+    }
+  },
+  mounted() {
+    authorization().then((data) => [this.hasLogin, this.username] = data);
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      window.location.reload(false);
+    },
+    refresh() {
+      this.username = localStorage.getItem('username.myblog');
+    }
   }
+}
 </script>
 
-<style scoped>
-.bd-navbar {
-    padding: .75rem 0;
-    background-color: transparent;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(255,255,255,0.15);
-}
-</style>
+<style scoped>.bd-navbar {
+  padding: .75rem 0;
+  background-color: transparent;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}</style>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {onMounted, watch} from 'vue'
+import { onMounted, watch } from 'vue'
 
 export default function getArticleData(info, route, kwargs) {
     const getData = async () => {
