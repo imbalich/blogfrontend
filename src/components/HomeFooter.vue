@@ -33,17 +33,15 @@
 
 
 <script>
-  export default {
-      name: 'HomeFooter',
-      components: {},
-  }
+export default {
+  name: 'HomeFooter',
+  components: {},
+}
 </script>
 
 <style scoped>
-
 a {
   color: #575A5E;
   text-decoration: none;
 }
-
 </style>

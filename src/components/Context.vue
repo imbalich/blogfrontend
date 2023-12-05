@@ -3,7 +3,7 @@
     <div class="row py-4 py-md-4 mt-5">
       <div class="col-sm-9 col-md-9">
         <!-- 博客内容--star -->
-        <BlogList/>
+        <BlogList />
         <!-- 博客内容--end -->
       </div>
       <div class="col-sm-3 col-md-3">
@@ -13,7 +13,9 @@
           <div class="card-body d-flex flex-column">
             <div class="d-flex flex-row">
               <img class="rounded-circle" src="头像.jpg" alt="User Avatar" width="40" height="40" aria-expanded="false">
-              <div class="p-2"><h4 class="card-title">imba_lich</h4></div>
+              <div class="p-2">
+                <h4 class="card-title">imba_lich</h4>
+              </div>
             </div>
             <p class="card-text mt-3">想要成为全栈工程师的咸鱼可靠性工程师！</p>
           </div>
@@ -33,10 +35,10 @@
 </template>
 
 <script>
-  import BlogList from '@/components/BlogList.vue';
+import BlogList from '@/components/BlogList.vue';
 
-  export default {
-      name: 'Context',
-      components: {BlogList},
-  }
+export default {
+  name: 'Context',
+  components: { BlogList },
+}
 </script>
