@@ -13,7 +13,7 @@ async function authorization() {
     // 初始 token 未过期
     if (expiredTime > current) {
         hasLogin = true;
-        console.log('authorization access')
+        console.log('鉴权通过');
     }
     // 初始 token 过期
     // 申请刷新 token
@@ -29,23 +29,23 @@ async function authorization() {
 
             hasLogin = true;
 
-            console.log('authorization refresh')
+            console.log('鉴权跟新')
         }
         catch (err) {
             storage.clear();
             hasLogin = false;
 
-            console.log('authorization err')
+            console.log('鉴权失败')
         }
     }
     // 无任何有效 token
     else {
         storage.clear();
         hasLogin = false;
-        console.log('authorization exp')
+        console.log('无鉴权')
     }
 
-    console.log('authorization done');
+    console.log('鉴权完毕');
 
     return [hasLogin, username]
 }

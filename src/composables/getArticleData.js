@@ -4,12 +4,15 @@ import {onMounted, watch} from 'vue'
 export default function getArticleData(info, route, kwargs) {
     const getData = async () => {
 
+        // 路由中页数非空就是当前页，空设置为 page=1
         const queryPage = route.query.page !== undefined ? parseInt(route.query.page) : 1;
         if (kwargs.value.page === queryPage && kwargs.value.searchText === route.query.search) {
             return
         }
 
         let url = '/api/article';
+
+        route.query.page = queryPage;
 
         let params = new URLSearchParams();
         params.appendIfExists('page', route.query.page);

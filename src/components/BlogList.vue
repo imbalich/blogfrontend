@@ -109,7 +109,9 @@
 
         
         const formatted_time = formattedTime;
-        console.log(info)
+        
+        console.log(info);
+
         return {
           info,
           is_page_exists,

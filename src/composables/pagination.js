@@ -1,9 +1,11 @@
 export default function pagination(info, route) {
 
+    // 判断页面是否存在
     const is_page_exists = (direction) => {
         return isPageExists(info, direction)
     };
 
+    // 获取页码
     const get_page_param = (direction) => {
         return getPageParam(info, route, direction)
     };
@@ -20,6 +22,7 @@ export default function pagination(info, route) {
     }
 }
 
+// 判断页面是否存在
 function isPageExists(info, direction) {
 
     if (direction === 'next') {
@@ -30,6 +33,7 @@ function isPageExists(info, direction) {
 
 }
 
+// 获取页码
 function getPageParam(info, route, direction) {
     try {
         let url_string;
