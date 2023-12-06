@@ -1,10 +1,10 @@
 <template>
   <!-- 简介 -->
   <div class="card ">
-    <img src="头像.jpg" width="100%" height="50%" class="card-img-top" alt="User Avatar">
+    <img src="用户头像.jpg" width="100%" height="50%" class="card-img-top" alt="User Avatar">
     <div class="card-body d-flex flex-column">
       <div class="d-flex flex-row">
-        <img class="rounded-circle" src="头像.jpg" alt="User Avatar" width="40" height="40" aria-expanded="false">
+        <img class="rounded-circle" src="用户头像.jpg" alt="User Avatar" width="40" height="40" aria-expanded="false">
         <div class="p-2">
           <h4 class="card-title">imba_lich</h4>
         </div>

@@ -1,4 +1,4 @@
-export default function articleGrid() {
+export default function articleImage() {
     const imageIfExists = (article) => {
         return _imageIfExists(article)
     };
