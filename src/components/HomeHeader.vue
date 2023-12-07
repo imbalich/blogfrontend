@@ -59,7 +59,7 @@
         <ul class="navbar-nav flex-row flex-warp justify-content-center">
           <li class="nav-item">
             <div v-if="hasLogin" class="dropdown">
-              <img class="rounded-circle" src="用户头像.jpg" alt="用户头像" width="40" height="40" id="dropdownMenuButton"
+              <img class="rounded-circle" src="@/assets/image/用户头像.jpg" alt="用户头像" width="40" height="40" id="dropdownMenuButton"
                 data-bs-toggle="dropdown" aria-expanded="false">
               <ul class="dropdown-menu text-small" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item disabled">欢迎: <strong>{{ username }}</strong> !</a></li>

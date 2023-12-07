@@ -23,7 +23,7 @@
     <div class="col-auto d-none d-lg-block">
       <img v-if="article.avatar" :src="imageIfExists(article)" class="bd-placeholder-img" width="300" height="250"
         role="img" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Thumbnail">
-      <img v-else src="avatat404.jpg" class="bd-placeholder-img" width="300" height="250" role="img"
+      <img v-else src="@/assets/image/avatat404.jpg" class="bd-placeholder-img" width="300" height="250" role="img"
         preserveAspectRatio="xMidYMid slice" focusable="false" alt="Thumbnail">
     </div>
     <div class="col p-4 d-flex flex-column position-static">
