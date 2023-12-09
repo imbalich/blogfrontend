@@ -102,16 +102,9 @@ export default {
     const kwargs = ref({ page: 0, searchText: '' })
     getArticleData(info, route, kwargs)
 
-    const {
-      is_page_exists,
-      get_page_param,
-      get_path
-    } = pagination(info, route)
+    const {is_page_exists,get_page_param,get_path} = pagination(info, route)
 
-    const {
-      imageIfExists
-    } = articleImage()
-
+    const {imageIfExists} = articleImage()
 
     const formatted_time = formattedTime
 

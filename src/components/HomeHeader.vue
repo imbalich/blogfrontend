@@ -87,30 +87,23 @@
 </template>
 
 <script>
-import authorization from '@/utils/authorization'
+import {useAuthorization} from '@/composables/useAuthorization.js'
 
 export default {
   name: 'HomeHeader',
   components: {},
-  data: function () {
+  setup() {
+    const { username, hasLogin, isSuperuser, logout, refresh } = useAuthorization();
+
     return {
-      username: '',
-      hasLogin: false,
-      isSuperuser: JSON.parse(localStorage.getItem('isSuperuser.myblog')),
-    }
-  },
-  mounted () {
-    authorization().then((data) => [this.hasLogin, this.username] = data)
-  },
-  methods: {
-    logout () {
-      localStorage.clear()
-      window.location.reload(false)
-    },
-    refresh () {
-      this.username = localStorage.getItem('username.myblog')
-    }
+      username,
+      hasLogin,
+      isSuperuser,
+      logout,
+      refresh
+    };
   }
+
 }
 </script>
 
